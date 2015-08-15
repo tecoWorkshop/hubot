@@ -15,6 +15,9 @@
     - name: install libicu-devel
       yum: name=libicu-devel state=latest
 
+    - name: install nodejs-node-expat for hipchat adapter
+      yum: name=nodejs-node-expat state=latest
+
     - name: install npm
       yum: name=npm state=latest enablerepo=epel
 
