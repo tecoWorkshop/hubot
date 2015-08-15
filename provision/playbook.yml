@@ -1,0 +1,43 @@
+---
+- hosts: localhost
+  sudo: yes
+
+  tasks:
+    - name: install libselinux-python
+      yum: name=libselinux-python state=present
+
+    - name: install redis
+      yum: name=redis state=latest enablerepo=epel
+
+    - name: install node
+      yum: name=nodejs state=latest enablerepo=epel
+
+    - name: install libicu-devel
+      yum: name=libicu-devel state=latest
+
+    - name: install npm
+      yum: name=npm state=latest enablerepo=epel
+
+    - name: install coffee-script
+      npm: name=coffee-script state=latest global=yes
+
+#    - name: install hubot
+#      npm: name=hubot state=latest global=yes
+
+    - name: install hubot generator
+      npm: name={{item}} state=latest global=yes
+      with_items:
+        - yo
+        - generator-hubot
+
+#    - name: create project directory
+#      file: path=/var/hubot state=directory mode=0777
+
+#    - name: install hubot-adapter
+#      npm: name={{item}} state=latest path=/var/hubot
+#      with_items:
+#        - hubot-hipchat
+#        - hubot-chatwork
+
+  handlers:
+
