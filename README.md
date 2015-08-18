@@ -222,13 +222,25 @@ module.exports = (robot) ->
 
 ## HipChat と連携
 
+HipChat でボット用のアカウントを作成しておく
+
 ### HipChat アダプターを追加
 ※ node.js のバージョンが 0.12 以上である必要がある
 ```
 $ npm install hubot-hipchat
 ```
 
+### 実行スクリプトを編集
+`bin/hubot` ファイルを編集して HipChat 設定を追加する
+```
+export HUBOT_HIPCHAT_JID="xxxxxx_xxxxxx6@chat.hipchat.com" // HipChat の Jabber ID
+export HUBOT_HIPCHAT_PASSWORD="<password>" // パスワード
+```
 
+### HipChat アダプターを指定して実行
+```
+bin/hubot --adapter hipchat
+```
 
 
 
