@@ -24,23 +24,11 @@
     - name: install coffee-script
       npm: name=coffee-script state=latest global=yes
 
-#    - name: install hubot
-#      npm: name=hubot state=latest global=yes
-
     - name: install hubot generator
       npm: name={{item}} state=latest global=yes
       with_items:
         - yo
         - generator-hubot
-
-#    - name: create project directory
-#      file: path=/var/hubot state=directory mode=0777
-
-#    - name: install hubot-adapter
-#      npm: name={{item}} state=latest path=/var/hubot
-#      with_items:
-#        - hubot-hipchat
-#        - hubot-chatwork
 
   handlers:
 
