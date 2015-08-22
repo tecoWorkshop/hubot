@@ -16,7 +16,8 @@
     "hubot-redis-brain": "0.0.3",
     "hubot-scripts": "~2.16.2",
     "hubot": "~2.15.0",
-    "hubot-maps": "0.0.2"
+    "hubot-maps": "0.0.2",
+    "xml2js": "~0.4.10"
   },
   "engines": {
     "node": "0.10.x"
